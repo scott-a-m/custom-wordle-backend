@@ -19,7 +19,14 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    option: [
+      "https://wordlemaker.scottsdev.net",
+      "https://wordlemaker.netlify.app",
+    ],
+  })
+);
 app.use(xss());
 app.use(helmet());
 app.use(mongoSantize());
