@@ -21,10 +21,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(
   cors({
-    origin: [
-      "https://wordlemaker.scottsdev.net",
-      "https://wordlemaker.netlify.app",
-    ],
+    origin: "*",
   })
 );
 app.use(xss());
