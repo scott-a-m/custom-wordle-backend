@@ -34,10 +34,9 @@ app.use(
   })
 );
 
+app.use(express.static("./public"));
+
 app.get("/:id", getWordle);
-app.get("/", (req, res) => {
-  res.send("Custom Wordle Back-end");
-});
 app.post("/", createWordle);
 
 const start = async () => {
